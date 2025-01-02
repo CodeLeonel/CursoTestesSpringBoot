@@ -1,4 +1,4 @@
-package com.example.tests;
+package com.example.swplanetapi;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
