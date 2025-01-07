@@ -27,10 +27,16 @@ public class PlanetController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Planet> get(@PathVariable Long id) {
+    public ResponseEntity<Planet> get(@PathVariable("id") Long id) {
         return planetService.get(id).map(planet -> ResponseEntity.ok(planet))
             .orElseGet(() -> ResponseEntity.notFound().build());
           
     }
-
+    
+    @GetMapping("name/{name}")
+    public ResponseEntity<Planet> get(@PathVariable("name") String name) {
+        return planetService.get(name).map(planet -> ResponseEntity.ok(planet))
+            .orElseGet(() -> ResponseEntity.notFound().build());
+          
+    }
 }
